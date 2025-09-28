@@ -39,6 +39,38 @@ For `go install`, the [go tools](https://go.dev/doc/install) are required.
 go install github.com/Lofter1/anyflip-downloader@latest
 ```
 
+### Docker
+
+You can also run anyflip-downloader using Docker, which doesn't require installing any dependencies on your host system.
+
+#### Build the Docker image
+
+```sh
+git clone https://github.com/Lofter1/anyflip-downloader.git
+cd anyflip-downloader
+docker build -t anyflip-downloader .
+```
+
+#### Run with Docker
+
+To download a book and save it to your current directory:
+
+```sh
+docker run --rm -v $(pwd):/output -w /output anyflip-downloader <url to book>
+```
+
+For Windows PowerShell:
+```powershell
+docker run --rm -v ${PWD}:/output -w /output anyflip-downloader <url to book>
+```
+
+Example with additional options:
+```sh
+docker run --rm -v $(pwd):/output -w /output anyflip-downloader -title "My Book" -threads 4 <url to book>
+```
+
+The Docker image is based on `scratch` and is only ~16MB in size for maximum efficiency.
+
 ## Usage
 
 ```sh

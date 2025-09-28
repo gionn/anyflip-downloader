@@ -1,0 +1,37 @@
+# Git files
+.git/
+.gitignore
+.github/
+
+# Documentation
+README.md
+CONTRIBUTING.md
+LICENSE
+assets/
+
+# Build artifacts
+anyflip-downloader
+*.exe
+*.test
+*.out
+
+# Temporary files
+.DS_Store
+*.tmp
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# Scripts (not needed for container)
+scripts/
+
+# Output directories that might exist locally
+output/
+downloads/
+temp/
+
+# Don't exclude vendor directory as it contains dependencies
