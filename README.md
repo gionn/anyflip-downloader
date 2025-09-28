@@ -48,6 +48,7 @@ You can also run anyflip-downloader using Docker, which doesn't require installi
 ```sh
 git clone https://github.com/Lofter1/anyflip-downloader.git
 cd anyflip-downloader
+go mod vendor  # Create vendor directory for dependencies
 docker build -t anyflip-downloader .
 ```
 

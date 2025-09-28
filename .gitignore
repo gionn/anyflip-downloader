@@ -12,7 +12,7 @@ anyflip-downloader
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Dependency directories
+# vendor/ - NOTE: vendor/ is kept in git to ensure reliable Docker builds
 
 .DS_Store

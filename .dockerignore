@@ -34,4 +34,5 @@ output/
 downloads/
 temp/
 
-# Don't exclude vendor directory as it contains dependencies
+# Keep vendor directory - it contains dependencies needed for offline builds
+# vendor/
