@@ -13,6 +13,6 @@ anyflip-downloader
 *.out
 
 # Dependency directories
-# vendor/ - NOTE: vendor/ is kept in git to ensure reliable Docker builds
+vendor/
 
 .DS_Store

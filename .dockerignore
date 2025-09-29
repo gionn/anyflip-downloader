@@ -34,5 +34,5 @@ output/
 downloads/
 temp/
 
-# Keep vendor directory - it contains dependencies needed for offline builds
-# vendor/
+# Dependencies are downloaded during build
+vendor/

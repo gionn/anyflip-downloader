@@ -1,15 +1,23 @@
 # Build stage
 FROM golang:1.24-alpine AS builder
 
+# Install ca-certificates and git for dependency downloads
+RUN apk add --no-cache ca-certificates git
+
 # Set working directory
 WORKDIR /app
 
-# Copy everything including vendor directory for offline builds
+# Copy go mod files first for better caching
+COPY go.mod go.sum ./
+
+# Download dependencies
+RUN go mod download
+
+# Copy source code
 COPY . .
 
-# Build the application using vendored dependencies
-# This approach works even without internet access during build
-RUN CGO_ENABLED=0 GOOS=linux go build -mod=vendor -ldflags="-w -s" -o anyflip-downloader .
+# Build the application
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o anyflip-downloader .
 
 # Runtime stage - using minimal scratch image
 FROM scratch
